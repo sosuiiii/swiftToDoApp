@@ -25,8 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore {
 //            let tutorialVC = storyboard.instantiateViewController(identifier: "main") as! MainTabViewController
-            let tutorialVC = storyboard.instantiateViewController(identifier: "tutorial") as! TutorialViewController
-//            let tutorialVC = storyboard.instantiateInitialViewController()
+//            let tutorialVC = storyboard.instantiateViewController(identifier: "tutorial") as! TutorialViewController
+            let tutorialVC = storyboard.instantiateInitialViewController()
             self.window?.rootViewController = tutorialVC
             self.window?.makeKeyAndVisible()
         } else {

@@ -9,23 +9,30 @@
 import UIKit
 //import FontAwesomeKit
 
-class FirstTabViewController: UIViewController {
+class FirstTabViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var testLabel: UILabel!
-    var tabSelectedIndex = 1
+//    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var titleText: UILabel!
+    
+    
+//    var tabSelectedIndex = 2
     let onColor = UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 1.0)
     let offColor = UIColor.gray
+    var testArray = ["牛乳を買う", "掃除をする", "アプリ開発の勉強をする","a","a"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        titleText.text = "進行中の目標"
+        titleText.frame.size.width = view.frame.size.width * 0.8
+        titleText.textAlignment = .center
         
+//        tabBarController?.selectedIndex = tabSelectedIndex
         
-        tabBarController?.selectedIndex = tabSelectedIndex
-        
-        setTabBarItem(index: 0, titile: "現在の目標" ,image: UIImage(named: "tab01")!, selectedImage: UIImage(named: "tab01ed")!/*, offColor: offColor, onColor: onColor*/)
-        setTabBarItem(index: 1, titile: "目標リスト" ,image: UIImage(named: "tab02")!,selectedImage: UIImage(named: "tab02ed")!/*, offColor: offColor, onColor: onColor*/)
-        setTabBarItem(index: 2, titile: "マイページ" ,image: UIImage(named: "tab03")!, selectedImage: UIImage(named: "tab03ed")!/*, offColor: offColor, onColor: onColor*/)
+        setTabBarItem(index: 0, title: "現在の目標" ,image: UIImage(named: "tab01")!, selectedImage: UIImage(named: "tab01ed")!/*, offColor: offColor, onColor: onColor*/)
+        setTabBarItem(index: 1, title: "目標リスト" ,image: UIImage(named: "tab02")!,selectedImage: UIImage(named: "tab02ed")!/*, offColor: offColor, onColor: onColor*/)
+        setTabBarItem(index: 2, title: "マイページ" ,image: UIImage(named: "tab03")!, selectedImage: UIImage(named: "tab03ed")!/*, offColor: offColor, onColor: onColor*/)
         
         if let tabBar = tabBarController?.tabBar {
             
@@ -49,17 +56,57 @@ class FirstTabViewController: UIViewController {
         
         
     }
-    func setTabBarItem(index: Int, titile: String ,image: UIImage, selectedImage: UIImage/*,  offColor: UIColor, onColor: UIColor*/) -> Void {
+    func setTabBarItem(index: Int, title: String ,image: UIImage, selectedImage: UIImage/*,  offColor: UIColor, onColor: UIColor*/) -> Void {
         if let tabBarItem = self.tabBarController?.tabBar.items![index] {
 //          https://program-life.com/1073
-            tabBarItem.title = titile
+            tabBarItem.title = title
             tabBarItem.image = image.withRenderingMode(.alwaysOriginal)
             tabBarItem.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
 //            tabBarItem.setTitleTextAttributes([ .foregroundColor : offColor], for: .normal)
 //            tabBarItem.setTitleTextAttributes([ .foregroundColor : onColor], for: .selected)
         }
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testArray.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // セルを取得する
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel!.text = "TODO[indexPath.row]"
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        
+        switch indexPath.row {
+            case 0:print("")
+            case 1:print("")
+            case 2:print("")
+            case 3:print("")
+            case 4:print("")
+            default:print("")
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            testArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
 
     /*
     // MARK: - Navigation
