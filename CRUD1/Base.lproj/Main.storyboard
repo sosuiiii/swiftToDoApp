@@ -310,12 +310,45 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="現在の目標" id="3a3-Hp-PBP"/>
                     <connections>
+                        <outlet property="tableView" destination="vAe-72-uw5" id="Ojt-qZ-yKB"/>
                         <outlet property="titleText" destination="V7W-7n-ki9" id="t2l-4N-E7Q"/>
+                        <segue destination="Diw-Um-1yy" kind="show" identifier="cellSetting" id="dlj-cf-moQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PJ-du-vcX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3298.5507246376815" y="-717.1875"/>
+        </scene>
+        <!--Cell Setting View Controller-->
+        <scene sceneID="hcH-8S-sYk">
+            <objects>
+                <viewController id="Diw-Um-1yy" customClass="cellSettingViewController" customModule="CRUD1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l78-7E-MF9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laY-Dh-DOC">
+                                <rect key="frame" x="186" y="85" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="laY-Dh-DOC" firstAttribute="centerX" secondItem="l78-7E-MF9" secondAttribute="centerX" id="hjk-sF-Kce"/>
+                            <constraint firstItem="laY-Dh-DOC" firstAttribute="top" secondItem="Nvy-G8-6QE" secondAttribute="top" constant="85" id="ohB-5h-k73"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nvy-G8-6QE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jNj-l9-07L"/>
+                    <connections>
+                        <outlet property="titleText" destination="laY-Dh-DOC" id="eSo-L6-C5r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYZ-lA-zDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4062" y="-717"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="c32-Oa-1Ow">

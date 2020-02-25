@@ -19,6 +19,9 @@
 		3DE46B7723FD3E300016879D /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE46B7123F6D52D0016879D /* Font Awesome 5 Free-Regular-400.otf */; };
 		3DE46B7823FD3E300016879D /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE46B7223F6D52D0016879D /* Font Awesome 5 Free-Solid-900.otf */; };
 		3DE46B9E24040A570016879D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE46B9D24040A570016879D /* TabBarController.swift */; };
+		3DE46BA02404617D0016879D /* cellSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE46B9F2404617D0016879D /* cellSettingViewController.swift */; };
+		3DE46BA32404F0610016879D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE46BA12404F0610016879D /* CustomTableViewCell.swift */; };
+		3DE46BA42404F0610016879D /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE46BA22404F0610016879D /* CustomTableViewCell.xib */; };
 		3DEDC9C823EFE1E1005C3C87 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDC9C723EFE1E1005C3C87 /* FirstTabViewController.swift */; };
 		3DEDC9CA23EFE1F7005C3C87 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDC9C923EFE1F7005C3C87 /* SecondTabViewController.swift */; };
 		3DEDC9CC23EFE217005C3C87 /* ThirdTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDC9CB23EFE217005C3C87 /* ThirdTabViewController.swift */; };
@@ -38,6 +41,9 @@
 		3DE46B7223F6D52D0016879D /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		3DE46B7323F6D5F00016879D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3DE46B9D24040A570016879D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3DE46B9F2404617D0016879D /* cellSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellSettingViewController.swift; sourceTree = "<group>"; };
+		3DE46BA12404F0610016879D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		3DE46BA22404F0610016879D /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		3DEDC9C723EFE1E1005C3C87 /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
 		3DEDC9C923EFE1F7005C3C87 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		3DEDC9CB23EFE217005C3C87 /* ThirdTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,9 @@
 				3DEDC9C723EFE1E1005C3C87 /* FirstTabViewController.swift */,
 				3DEDC9C923EFE1F7005C3C87 /* SecondTabViewController.swift */,
 				3DEDC9CB23EFE217005C3C87 /* ThirdTabViewController.swift */,
+				3DE46BA12404F0610016879D /* CustomTableViewCell.swift */,
+				3DE46BA22404F0610016879D /* CustomTableViewCell.xib */,
+				3DE46B9F2404617D0016879D /* cellSettingViewController.swift */,
 				3D58412B23E70DF7004FD287 /* Assets.xcassets */,
 				3D58412D23E70DF7004FD287 /* LaunchScreen.storyboard */,
 				3D58413023E70DF7004FD287 /* Info.plist */,
@@ -183,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE46B7623FD3E300016879D /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				3DE46BA42404F0610016879D /* CustomTableViewCell.xib in Resources */,
 				3DE46B7723FD3E300016879D /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				3DE46B7823FD3E300016879D /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				3D58412F23E70DF7004FD287 /* LaunchScreen.storyboard in Resources */,
@@ -228,6 +238,8 @@
 				3DEDC9C823EFE1E1005C3C87 /* FirstTabViewController.swift in Sources */,
 				3D58412723E70DF6004FD287 /* TutorialViewController.swift in Sources */,
 				3D58413723E710F4004FD287 /* StartViewController.swift in Sources */,
+				3DE46BA02404617D0016879D /* cellSettingViewController.swift in Sources */,
+				3DE46BA32404F0610016879D /* CustomTableViewCell.swift in Sources */,
 				3DEDC9CA23EFE1F7005C3C87 /* SecondTabViewController.swift in Sources */,
 				3D58412323E70DF6004FD287 /* AppDelegate.swift in Sources */,
 				3DE46B7423F6D5F00016879D /* SceneDelegate.swift in Sources */,

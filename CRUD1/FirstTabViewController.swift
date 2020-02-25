@@ -13,16 +13,31 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 
 //    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var titleText: UILabel!
-    
+//    var cellVC:cellSettingViewController!
+    @IBOutlet weak var tableView: UITableView!
+    var cellCount = 0
     
 //    var tabSelectedIndex = 2
     let onColor = UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 1.0)
     let offColor = UIColor.gray
-    var testArray = ["牛乳を買う", "掃除をする", "アプリ開発の勉強をする","a","a"]
+    var testArray = ["お金を貯める",
+                     "掃除をする",
+                     "アプリ開発の勉強をする",
+                     "毎日腹筋をする",
+                     "メンタルを強くする",
+    ]
+    var contentArray = ["毎日500円分貯める",
+                        "毎朝軽くでもいいから掃除をする",
+                        "30分以上Swiftの勉強をする",
+                        "毎朝20回以上やる",
+                        "寝る前に自己啓発本を読む",
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         titleText.text = "進行中の目標"
         titleText.frame.size.width = view.frame.size.width * 0.8
@@ -71,22 +86,32 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // セルを取得する
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel!.text = "TODO[indexPath.row]"
+        let value = 2
+        let sum = 10
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
+        cell.testText = testArray[indexPath.row]
+        cell.content = contentArray[indexPath.row]
+        cell.progressText = "\(value)/\(sum)"
         return cell
+        
+//        return UITableViewCell()
+        // セルを取得する
+//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        cell.textLabel!.text = "TODO[indexPath.row]"
+//        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         
         switch indexPath.row {
-            case 0:print("")
-            case 1:print("")
-            case 2:print("")
-            case 3:print("")
-            case 4:print("")
-            default:print("")
+            case 0: cellCount = 0
+            case 1: cellCount = 1
+            case 2: cellCount = 2
+            case 3: cellCount = 3
+            case 4: cellCount = 4
+            default: cellCount = 0
         }
+        performSegue(withIdentifier: "cellSetting", sender: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -105,6 +130,19 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         if editingStyle == UITableViewCell.EditingStyle.delete {
             testArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "cellSetting" {
+            let cellVC = segue.destination as! cellSettingViewController
+            switch cellCount {
+            case 0: cellVC.testText = testArray[0]
+            case 1: cellVC.testText = testArray[1]
+            case 2: cellVC.testText = testArray[2]
+            case 3: cellVC.testText = testArray[3]
+            case 4: cellVC.testText = testArray[4]
+            default: print("")
+            }
         }
     }
 
