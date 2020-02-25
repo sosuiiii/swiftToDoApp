@@ -9,6 +9,26 @@
 import UIKit
 
 class SecondTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var segment: UISegmentedControl!
+    var selectSegment = 0
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    @IBAction func segmentAction(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 1:
+            selectSegment = 1
+        case 2:
+            selectSegment = 2
+        default:
+            print("")
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -16,14 +36,6 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
 
     /*
     // MARK: - Navigation

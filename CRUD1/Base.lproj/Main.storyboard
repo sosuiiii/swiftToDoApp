@@ -244,7 +244,7 @@
                                 <rect key="frame" x="20" y="59" width="374" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fBu-hK-Gjz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fBu-hK-Gjz">
                                         <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fBu-hK-Gjz" id="7b0-Mm-aWk">
@@ -265,6 +265,9 @@
                                     <segment title="Second"/>
                                     <segment title="Third"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="PhN-g2-hT2" eventType="valueChanged" id="DdQ-ar-b8c"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -282,6 +285,7 @@
                     <tabBarItem key="tabBarItem" title="目標リスト" id="sng-2b-Wol"/>
                     <navigationItem key="navigationItem" id="LO1-4l-1V9"/>
                     <connections>
+                        <outlet property="segment" destination="Hj1-Z9-X81" id="ftm-Pz-a0m"/>
                         <segue destination="3n0-Fi-SaH" kind="show" identifier="second" id="CuI-6e-69I"/>
                         <segue destination="uFn-Ys-qVR" kind="show" identifier="third" id="MIp-qK-das"/>
                     </connections>
@@ -310,7 +314,7 @@
                                 <rect key="frame" x="20" y="59" width="374" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2VK-1u-aJR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="2VK-1u-aJR">
                                         <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2VK-1u-aJR" id="CNB-ye-ACW">
@@ -367,7 +371,7 @@
                                 <rect key="frame" x="20" y="59" width="374" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="14G-Vm-FkD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="14G-Vm-FkD">
                                         <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="14G-Vm-FkD" id="tkC-64-u4k">
@@ -529,8 +533,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HnX-Om-r9B"/>
-        <segue reference="QUR-c4-csy"/>
-        <segue reference="bKE-N8-win"/>
-        <segue reference="LRs-3r-77j"/>
+        <segue reference="MIp-qK-das"/>
+        <segue reference="CuI-6e-69I"/>
+        <segue reference="1l8-gE-Prs"/>
     </inferredMetricsTieBreakers>
 </document>
