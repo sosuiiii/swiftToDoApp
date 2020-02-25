@@ -16,6 +16,8 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 //    var cellVC:cellSettingViewController!
     @IBOutlet weak var tableView: UITableView!
     var cellCount = 0
+    var value = 2
+    let sum = 10
     
 //    var tabSelectedIndex = 2
     let onColor = UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 1.0)
@@ -86,12 +88,12 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let value = 2
-        let sum = 10
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
         cell.testText = testArray[indexPath.row]
         cell.content = contentArray[indexPath.row]
-        cell.progressText = "\(value)/\(sum)"
+        cell.progressText = "\(value + indexPath.row)/\(sum)"
+        cell.progressView.setProgress(Float(indexPath.row) / 10.0 + 0.2, animated: true)
         return cell
         
 //        return UITableViewCell()
@@ -105,6 +107,7 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         
         switch indexPath.row {
             case 0: cellCount = 0
+                    UserDefaults.standard.set(false, forKey: "launchedBefore")
             case 1: cellCount = 1
             case 2: cellCount = 2
             case 3: cellCount = 3
