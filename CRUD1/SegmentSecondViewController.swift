@@ -1,14 +1,14 @@
 //
-//  TabWorkListViewController.swift
+//  SegmentSecondViewController.swift
 //  CRUD1
 //
-//  Created by Tanaka Soushi on 2020/02/09.
+//  Created by Tanaka Soushi on 2020/02/26.
 //  Copyright © 2020 Tanaka Soushi. All rights reserved.
 //
 
 import UIKit
 
-class SecondTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SegmentSecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -16,7 +16,6 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
