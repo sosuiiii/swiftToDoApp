@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="segmentCell" rowHeight="130" id="7h1-j9-CU1" customClass="SegmentCell" customModule="CRUD1" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7h1-j9-CU1" id="8m4-q9-xS8">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzd-ZH-70R">
+                        <rect key="frame" x="129.5" y="20" width="61" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYE-qd-Znw">
+                        <rect key="frame" x="130.5" y="49" width="59" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="rMJ-45-Qdh">
+                        <rect key="frame" x="16" y="107" width="235" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="SSm-97-Rwb"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="217" id="bqE-d8-esx"/>
+                        </constraints>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dua-vG-2bO">
+                        <rect key="frame" x="263" y="98" width="41" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="4sp-Lw-5cC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="rMJ-45-Qdh" secondAttribute="bottom" constant="10" id="9qf-Hg-GBM"/>
+                    <constraint firstItem="Bzd-ZH-70R" firstAttribute="centerX" secondItem="IYE-qd-Znw" secondAttribute="centerX" id="Cbj-FD-50z"/>
+                    <constraint firstItem="IYE-qd-Znw" firstAttribute="top" secondItem="Bzd-ZH-70R" secondAttribute="bottom" constant="8" id="Ljp-bL-aSm"/>
+                    <constraint firstItem="Bzd-ZH-70R" firstAttribute="top" secondItem="8m4-q9-xS8" secondAttribute="top" constant="20" id="Xa6-JC-jkO"/>
+                    <constraint firstItem="dua-vG-2bO" firstAttribute="trailing" secondItem="8m4-q9-xS8" secondAttribute="trailingMargin" id="kk3-3R-CqG"/>
+                    <constraint firstItem="Bzd-ZH-70R" firstAttribute="centerX" secondItem="8m4-q9-xS8" secondAttribute="centerX" id="l43-fT-8cS"/>
+                    <constraint firstItem="rMJ-45-Qdh" firstAttribute="leading" secondItem="8m4-q9-xS8" secondAttribute="leadingMargin" id="oXw-9y-2KA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rMJ-45-Qdh" secondAttribute="trailing" constant="53" id="pTk-dm-iAC"/>
+                    <constraint firstAttribute="bottom" secondItem="dua-vG-2bO" secondAttribute="bottom" constant="12" id="vCk-kz-nVX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="1Ju-EW-iS1"/>
+            <connections>
+                <outlet property="contentText" destination="IYE-qd-Znw" id="CPh-1f-vCc"/>
+                <outlet property="progressLabel" destination="dua-vG-2bO" id="Der-lA-5ZH"/>
+                <outlet property="progressView" destination="rMJ-45-Qdh" id="h9q-X2-vpR"/>
+                <outlet property="titleText" destination="Bzd-ZH-70R" id="Bu8-Qp-7EO"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="262"/>
+        </tableViewCell>
+    </objects>
+</document>

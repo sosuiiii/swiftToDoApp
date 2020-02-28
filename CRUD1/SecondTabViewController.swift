@@ -10,22 +10,35 @@ import UIKit
 
 class SecondTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
+    
+    
     @IBOutlet weak var segment: UISegmentedControl!
     var selectSegment = 0
+    @IBOutlet weak var tableView: UITableView!
+    var firstArray:[String] = []
+    var secondArray:[String] = []
+    var thirdArray:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.register(UINib(nibName: "SegmentCell", bundle: nil), forCellReuseIdentifier: "segmentCell")
+        
     }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
-        
         switch sender.selectedSegmentIndex {
+        case 0:
+            selectSegment = 0
+            segment.selectedSegmentIndex = 0
         case 1:
             selectSegment = 1
         case 2:
             selectSegment = 2
         default:
-            print("")
+            break
         }
     }
     
@@ -34,7 +47,14 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "segmentCell") as! SegmentCell
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 
     /*

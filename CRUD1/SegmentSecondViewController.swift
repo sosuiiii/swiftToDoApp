@@ -9,18 +9,34 @@
 import UIKit
 
 class SegmentSecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var selectSegment = 0
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        segmentControl.selectedSegmentIndex = 1
+        
+    }
+    @IBAction func segmentAction(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            selectSegment = 0
+//            performSegue(withIdentifier: "first", sender: nil)
+            dismiss(animated: true, completion: nil)
+        case 2:
+            selectSegment = 2
+            performSegue(withIdentifier: "third", sender: nil)
+        default:
+            break
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 

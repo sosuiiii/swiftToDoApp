@@ -235,13 +235,13 @@
         <!--目標リスト-->
         <scene sceneID="w2n-fC-1uh">
             <objects>
-                <viewController id="PhN-g2-hT2" customClass="SecondTabViewController" customModule="CRUD1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="PhN-g2-hT2" customClass="SecondTabViewController" customModule="CRUD1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o7g-wh-oSV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-hr-EFY">
-                                <rect key="frame" x="20" y="59" width="374" height="749"/>
+                                <rect key="frame" x="20" y="59" width="374" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fBu-hK-Gjz">
@@ -275,7 +275,7 @@
                             <constraint firstItem="Hj1-Z9-X81" firstAttribute="leading" secondItem="aud-h5-Ia0" secondAttribute="leading" constant="20" id="0zI-F0-RWP"/>
                             <constraint firstItem="Ag1-hr-EFY" firstAttribute="top" secondItem="Hj1-Z9-X81" secondAttribute="bottom" constant="8" id="1al-X7-wP7"/>
                             <constraint firstItem="Ag1-hr-EFY" firstAttribute="leading" secondItem="o7g-wh-oSV" secondAttribute="leadingMargin" id="Ei4-bU-MER"/>
-                            <constraint firstItem="Ag1-hr-EFY" firstAttribute="bottom" secondItem="aud-h5-Ia0" secondAttribute="bottom" id="F9y-l9-qf4"/>
+                            <constraint firstItem="Ag1-hr-EFY" firstAttribute="bottom" secondItem="aud-h5-Ia0" secondAttribute="bottom" constant="-49" id="F9y-l9-qf4"/>
                             <constraint firstItem="Hj1-Z9-X81" firstAttribute="centerX" secondItem="Ag1-hr-EFY" secondAttribute="centerX" id="Kbf-hC-Ifz"/>
                             <constraint firstItem="Ag1-hr-EFY" firstAttribute="trailing" secondItem="o7g-wh-oSV" secondAttribute="trailingMargin" id="cFO-7g-5i1"/>
                             <constraint firstItem="Hj1-Z9-X81" firstAttribute="top" secondItem="aud-h5-Ia0" secondAttribute="top" constant="20" id="sxi-yh-2c7"/>
@@ -286,127 +286,12 @@
                     <navigationItem key="navigationItem" id="LO1-4l-1V9"/>
                     <connections>
                         <outlet property="segment" destination="Hj1-Z9-X81" id="ftm-Pz-a0m"/>
-                        <segue destination="3n0-Fi-SaH" kind="show" identifier="second" id="CuI-6e-69I"/>
-                        <segue destination="uFn-Ys-qVR" kind="show" identifier="third" id="MIp-qK-das"/>
+                        <outlet property="tableView" destination="Ag1-hr-EFY" id="cqH-V1-21h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svN-ND-7rC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3298.5507246376815" y="-40.178571428571423"/>
-        </scene>
-        <!--Segment Second View Controller-->
-        <scene sceneID="QaB-tg-kBr">
-            <objects>
-                <viewController id="3n0-Fi-SaH" customClass="SegmentSecondViewController" customModule="CRUD1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fao-E0-dxQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W2q-H4-6D9">
-                                <rect key="frame" x="20" y="20" width="374" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title="Third"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JzT-sL-b7p">
-                                <rect key="frame" x="20" y="59" width="374" height="749"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="2VK-1u-aJR">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2VK-1u-aJR" id="CNB-ye-ACW">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="3n0-Fi-SaH" id="Xl0-fM-ZPt"/>
-                                    <outlet property="delegate" destination="3n0-Fi-SaH" id="Aou-9S-j3z"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="W2q-H4-6D9" firstAttribute="leading" secondItem="fao-E0-dxQ" secondAttribute="leadingMargin" id="7H2-e6-L8q"/>
-                            <constraint firstItem="W2q-H4-6D9" firstAttribute="trailing" secondItem="JzT-sL-b7p" secondAttribute="trailing" id="PK9-NZ-RY4"/>
-                            <constraint firstItem="JzT-sL-b7p" firstAttribute="bottom" secondItem="O7v-oE-OVf" secondAttribute="bottom" id="PvZ-4u-OrK"/>
-                            <constraint firstItem="W2q-H4-6D9" firstAttribute="top" secondItem="O7v-oE-OVf" secondAttribute="top" constant="20" id="Rbj-t8-DRv"/>
-                            <constraint firstItem="W2q-H4-6D9" firstAttribute="trailing" secondItem="fao-E0-dxQ" secondAttribute="trailingMargin" id="Y3p-Op-g2r"/>
-                            <constraint firstItem="JzT-sL-b7p" firstAttribute="top" secondItem="W2q-H4-6D9" secondAttribute="bottom" constant="8" id="a9D-Lz-iZD"/>
-                            <constraint firstItem="W2q-H4-6D9" firstAttribute="leading" secondItem="JzT-sL-b7p" secondAttribute="leading" id="kT7-UY-iNV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="O7v-oE-OVf"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="KRd-d1-wA5"/>
-                    <connections>
-                        <segue destination="PhN-g2-hT2" kind="show" identifier="first" id="1l8-gE-Prs"/>
-                        <segue destination="uFn-Ys-qVR" kind="show" identifier="third" id="QUR-c4-csy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tyk-4x-Xs4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4060.8695652173915" y="-40.178571428571423"/>
-        </scene>
-        <!--Segment Third View Controller-->
-        <scene sceneID="dO0-fK-qIO">
-            <objects>
-                <viewController id="uFn-Ys-qVR" customClass="SegmentThirdViewController" customModule="CRUD1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fSs-6C-JYO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vS8-OG-At7">
-                                <rect key="frame" x="20" y="20" width="374" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title="Third"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rKd-Zq-j9G">
-                                <rect key="frame" x="20" y="59" width="374" height="749"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="14G-Vm-FkD">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="14G-Vm-FkD" id="tkC-64-u4k">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="uFn-Ys-qVR" id="Jh9-88-adc"/>
-                                    <outlet property="delegate" destination="uFn-Ys-qVR" id="H2e-DM-uyx"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="vS8-OG-At7" firstAttribute="trailing" secondItem="fSs-6C-JYO" secondAttribute="trailingMargin" id="ChI-hi-uyq"/>
-                            <constraint firstItem="vS8-OG-At7" firstAttribute="trailing" secondItem="rKd-Zq-j9G" secondAttribute="trailing" id="G1L-6l-Rnk"/>
-                            <constraint firstItem="vS8-OG-At7" firstAttribute="leading" secondItem="rKd-Zq-j9G" secondAttribute="leading" id="HZn-9C-6nu"/>
-                            <constraint firstItem="rKd-Zq-j9G" firstAttribute="top" secondItem="vS8-OG-At7" secondAttribute="bottom" constant="8" id="I9O-n6-Jyx"/>
-                            <constraint firstItem="vS8-OG-At7" firstAttribute="top" secondItem="mhP-m6-Y5S" secondAttribute="top" constant="20" id="SEd-5f-2UO"/>
-                            <constraint firstItem="rKd-Zq-j9G" firstAttribute="bottom" secondItem="mhP-m6-Y5S" secondAttribute="bottom" id="W8t-ES-UZ7"/>
-                            <constraint firstItem="vS8-OG-At7" firstAttribute="leading" secondItem="fSs-6C-JYO" secondAttribute="leadingMargin" id="cmb-T4-tKK"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mhP-m6-Y5S"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Mbq-vK-eVu"/>
-                    <connections>
-                        <segue destination="PhN-g2-hT2" kind="show" identifier="first" id="LRs-3r-77j"/>
-                        <segue destination="3n0-Fi-SaH" kind="show" identifier="second" id="bKE-N8-win"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cdE-sr-XdK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4818.840579710145" y="-40.178571428571423"/>
         </scene>
         <!--マイページ-->
         <scene sceneID="9QO-M7-fGe">
@@ -533,8 +418,5 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HnX-Om-r9B"/>
-        <segue reference="MIp-qK-das"/>
-        <segue reference="CuI-6e-69I"/>
-        <segue reference="1l8-gE-Prs"/>
     </inferredMetricsTieBreakers>
 </document>

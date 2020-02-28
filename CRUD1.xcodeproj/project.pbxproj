@@ -14,6 +14,8 @@
 		3D58412C23E70DF7004FD287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D58412B23E70DF7004FD287 /* Assets.xcassets */; };
 		3D58412F23E70DF7004FD287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D58412D23E70DF7004FD287 /* LaunchScreen.storyboard */; };
 		3D58413723E710F4004FD287 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58413623E710F4004FD287 /* StartViewController.swift */; };
+		3D7551012406C5EB005350AD /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7550FF2406C5EB005350AD /* SegmentCell.swift */; };
+		3D7551022406C5EB005350AD /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7551002406C5EB005350AD /* SegmentCell.xib */; };
 		3DE46B7423F6D5F00016879D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE46B7323F6D5F00016879D /* SceneDelegate.swift */; };
 		3DE46B7623FD3E300016879D /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE46B7023F6D52D0016879D /* Font Awesome 5 Brands-Regular-400.otf */; };
 		3DE46B7723FD3E300016879D /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3DE46B7123F6D52D0016879D /* Font Awesome 5 Free-Regular-400.otf */; };
@@ -25,8 +27,6 @@
 		3DEDC9C823EFE1E1005C3C87 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDC9C723EFE1E1005C3C87 /* FirstTabViewController.swift */; };
 		3DEDC9CA23EFE1F7005C3C87 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDC9C923EFE1F7005C3C87 /* SecondTabViewController.swift */; };
 		3DEDC9CC23EFE217005C3C87 /* ThirdTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDC9CB23EFE217005C3C87 /* ThirdTabViewController.swift */; };
-		3DFD4F1B2405723000E4E3CA /* SegmentSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD4F1A2405723000E4E3CA /* SegmentSecondViewController.swift */; };
-		3DFD4F1D2405724C00E4E3CA /* SegmentThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD4F1C2405724C00E4E3CA /* SegmentThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +38,8 @@
 		3D58412E23E70DF7004FD287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D58413023E70DF7004FD287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D58413623E710F4004FD287 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		3D7550FF2406C5EB005350AD /* SegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCell.swift; sourceTree = "<group>"; };
+		3D7551002406C5EB005350AD /* SegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
 		3DE46B7023F6D52D0016879D /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		3DE46B7123F6D52D0016879D /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		3DE46B7223F6D52D0016879D /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
@@ -49,8 +51,6 @@
 		3DEDC9C723EFE1E1005C3C87 /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
 		3DEDC9C923EFE1F7005C3C87 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		3DEDC9CB23EFE217005C3C87 /* ThirdTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabViewController.swift; sourceTree = "<group>"; };
-		3DFD4F1A2405723000E4E3CA /* SegmentSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSecondViewController.swift; sourceTree = "<group>"; };
-		3DFD4F1C2405724C00E4E3CA /* SegmentThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentThirdViewController.swift; sourceTree = "<group>"; };
 		68443756C5DF4D0CDF0BFD80 /* Pods-CRUD1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUD1.debug.xcconfig"; path = "Target Support Files/Pods-CRUD1/Pods-CRUD1.debug.xcconfig"; sourceTree = "<group>"; };
 		8E6906DE118B6C29D61BB850 /* Pods_CRUD1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRUD1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96CED8C5B2247AF15386593 /* Pods-CRUD1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUD1.release.xcconfig"; path = "Target Support Files/Pods-CRUD1/Pods-CRUD1.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,13 +97,13 @@
 				3D58412823E70DF6004FD287 /* Main.storyboard */,
 				3DE46B9D24040A570016879D /* TabBarController.swift */,
 				3DEDC9C723EFE1E1005C3C87 /* FirstTabViewController.swift */,
-				3DEDC9C923EFE1F7005C3C87 /* SecondTabViewController.swift */,
-				3DEDC9CB23EFE217005C3C87 /* ThirdTabViewController.swift */,
 				3DE46BA12404F0610016879D /* CustomTableViewCell.swift */,
 				3DE46BA22404F0610016879D /* CustomTableViewCell.xib */,
 				3DE46B9F2404617D0016879D /* cellSettingViewController.swift */,
-				3DFD4F1A2405723000E4E3CA /* SegmentSecondViewController.swift */,
-				3DFD4F1C2405724C00E4E3CA /* SegmentThirdViewController.swift */,
+				3DEDC9C923EFE1F7005C3C87 /* SecondTabViewController.swift */,
+				3D7550FF2406C5EB005350AD /* SegmentCell.swift */,
+				3D7551002406C5EB005350AD /* SegmentCell.xib */,
+				3DEDC9CB23EFE217005C3C87 /* ThirdTabViewController.swift */,
 				3D58412B23E70DF7004FD287 /* Assets.xcassets */,
 				3D58412D23E70DF7004FD287 /* LaunchScreen.storyboard */,
 				3D58413023E70DF7004FD287 /* Info.plist */,
@@ -200,6 +200,7 @@
 				3DE46B7623FD3E300016879D /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				3DE46BA42404F0610016879D /* CustomTableViewCell.xib in Resources */,
 				3DE46B7723FD3E300016879D /* Font Awesome 5 Free-Regular-400.otf in Resources */,
+				3D7551022406C5EB005350AD /* SegmentCell.xib in Resources */,
 				3DE46B7823FD3E300016879D /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				3D58412F23E70DF7004FD287 /* LaunchScreen.storyboard in Resources */,
 				3D58412C23E70DF7004FD287 /* Assets.xcassets in Resources */,
@@ -243,14 +244,13 @@
 				3DE46B9E24040A570016879D /* TabBarController.swift in Sources */,
 				3DEDC9C823EFE1E1005C3C87 /* FirstTabViewController.swift in Sources */,
 				3D58412723E70DF6004FD287 /* TutorialViewController.swift in Sources */,
-				3DFD4F1D2405724C00E4E3CA /* SegmentThirdViewController.swift in Sources */,
 				3D58413723E710F4004FD287 /* StartViewController.swift in Sources */,
 				3DE46BA02404617D0016879D /* cellSettingViewController.swift in Sources */,
 				3DE46BA32404F0610016879D /* CustomTableViewCell.swift in Sources */,
 				3DEDC9CA23EFE1F7005C3C87 /* SecondTabViewController.swift in Sources */,
+				3D7551012406C5EB005350AD /* SegmentCell.swift in Sources */,
 				3D58412323E70DF6004FD287 /* AppDelegate.swift in Sources */,
 				3DE46B7423F6D5F00016879D /* SceneDelegate.swift in Sources */,
-				3DFD4F1B2405723000E4E3CA /* SegmentSecondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
