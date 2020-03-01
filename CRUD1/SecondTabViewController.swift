@@ -34,7 +34,7 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         segment.setTitle("達成済み", forSegmentAt: 1)
         segment.setTitle("未達成", forSegmentAt: 2)
         segment.tintColor = .clear
-        segment.selectedSegmentTintColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 1)
+        segment.selectedSegmentTintColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         
