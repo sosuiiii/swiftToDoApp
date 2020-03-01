@@ -20,12 +20,17 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     var firstArray:[String] = []
     var secondArray:[String] = []
     var thirdArray:[String] = []
+    var cellCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.register(UINib(nibName: "SegmentCell", bundle: nil), forCellReuseIdentifier: "segmentCell")
+        
+        firstArray += ["aa","bb","cc","firstArray"]
+        secondArray += ["dd","ee","secondArray"]
+        thirdArray += ["gg","thirdArray"]
         
     }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
@@ -35,21 +40,41 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
             segment.selectedSegmentIndex = 0
         case 1:
             selectSegment = 1
+            segment.selectedSegmentIndex = 1
         case 2:
             selectSegment = 2
+            segment.selectedSegmentIndex = 2
         default:
             break
         }
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if selectSegment == 0 {
+            cellCount = firstArray.count
+        } else if selectSegment == 1 {
+            cellCount = secondArray.count
+        } else if selectSegment == 2 {
+            cellCount = thirdArray.count
+        }
+        return cellCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "segmentCell") as! SegmentCell
+        if selectSegment == 0 {
+            cell.titleLabel = firstArray[indexPath.row]
+        } else if selectSegment == 1 {
+            cell.titleLabel = secondArray[indexPath.row]
+        } else if selectSegment == 2 {
+            cell.titleLabel = thirdArray[indexPath.row]
+        }
+        
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150

@@ -60,11 +60,11 @@
             <viewLayoutGuide key="safeArea" id="1Ju-EW-iS1"/>
             <connections>
                 <outlet property="contentText" destination="IYE-qd-Znw" id="CPh-1f-vCc"/>
-                <outlet property="progressLabel" destination="dua-vG-2bO" id="Der-lA-5ZH"/>
+                <outlet property="progressText" destination="dua-vG-2bO" id="tDC-ss-AN4"/>
                 <outlet property="progressView" destination="rMJ-45-Qdh" id="h9q-X2-vpR"/>
                 <outlet property="titleText" destination="Bzd-ZH-70R" id="Bu8-Qp-7EO"/>
             </connections>
-            <point key="canvasLocation" x="138" y="262"/>
+            <point key="canvasLocation" x="137.68115942028987" y="261.83035714285711"/>
         </tableViewCell>
     </objects>
 </document>
