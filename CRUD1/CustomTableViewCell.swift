@@ -19,6 +19,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var progressLabel: UILabel!
     var progressText = ""
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,16 +37,18 @@ class CustomTableViewCell: UITableViewCell {
         contentText.text = content
         contentText.frame.size.width = self.frame.size.width * 0.8
         progressLabel.text = progressText
-        progressView.tintColor = .blue
+        progressView.tintColor = .green
         if progressView.progress < 0.33 {
             progressView.tintColor = .red
         } else if progressView.progress < 0.66 {
             progressView.tintColor = .yellow
         }
+
 //        progressView.frame.size.width = UIScreen.main.bounds.size.width * 1.5
 //        let sizeFit = self.frame.size.width * 0.8 / progressView.frame.size.width
 //        progressView.transform = CGAffineTransform(scaleX: 1.5, y: 1.0)
 //        progressView.progress * 1.5
     }
+    
     
 }

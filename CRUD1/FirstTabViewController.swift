@@ -16,10 +16,11 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var titleText: UILabel!
 //    var cellVC:cellSettingViewController!
     @IBOutlet weak var tableView: UITableView!
+    
+    
     var cellCount = 0
     var value = 2
     let sum = 10
-    
 //    var tabSelectedIndex = 2
     let onColor = UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 1.0)
     let offColor = UIColor.gray
@@ -73,6 +74,7 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 //            バッジの色を変える
 //            tabBar.items!.first?.badgeColor = UIColor.purple
         }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -100,6 +102,7 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.content = contentArray[indexPath.row]
         cell.progressText = "\(value + indexPath.row)/\(sum)"
         cell.progressView.setProgress(Float(indexPath.row) / 10.0 + 0.2, animated: true)
+        cell.accessoryType = .disclosureIndicator
         return cell
         
 //        return UITableViewCell()
@@ -109,7 +112,8 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 //        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.row {
             case 0: cellCount = 0
@@ -120,6 +124,7 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
             case 4: cellCount = 4
             default: cellCount = 0
         }
+        
         performSegue(withIdentifier: "cellSetting", sender: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -128,9 +133,9 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 //    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 //        return true
 //    }
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+//    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
 //    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
 //        return true
 //    }

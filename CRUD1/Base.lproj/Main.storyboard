@@ -492,20 +492,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deT-v0-0lB">
+                                <rect key="frame" x="184" y="668" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="LDg-lx-w2j" eventType="touchUpInside" id="2P0-JG-Wzp"/>
+                                    <action selector="doneButtonAction:" destination="Diw-Um-1yy" eventType="touchUpInside" id="hGh-65-8Ss"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoP-QS-zO8">
+                                <rect key="frame" x="184" y="728" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="undoButton:" destination="LDg-lx-w2j" eventType="touchUpInside" id="dFt-yf-coz"/>
+                                    <action selector="undoButtonAction:" destination="Diw-Um-1yy" eventType="touchUpInside" id="7lL-og-pR5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Nvy-G8-6QE" firstAttribute="bottom" secondItem="EoP-QS-zO8" secondAttribute="bottom" constant="50" id="8xy-eB-527"/>
+                            <constraint firstItem="EoP-QS-zO8" firstAttribute="top" secondItem="deT-v0-0lB" secondAttribute="bottom" constant="30" id="Lsi-Qf-6z0"/>
+                            <constraint firstItem="deT-v0-0lB" firstAttribute="centerX" secondItem="l78-7E-MF9" secondAttribute="centerX" id="VcL-1s-ezB"/>
                             <constraint firstItem="laY-Dh-DOC" firstAttribute="centerX" secondItem="l78-7E-MF9" secondAttribute="centerX" id="hjk-sF-Kce"/>
+                            <constraint firstItem="EoP-QS-zO8" firstAttribute="centerX" secondItem="l78-7E-MF9" secondAttribute="centerX" id="nJD-VZ-V7K"/>
                             <constraint firstItem="laY-Dh-DOC" firstAttribute="top" secondItem="Nvy-G8-6QE" secondAttribute="top" constant="85" id="ohB-5h-k73"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nvy-G8-6QE"/>
                     </view>
                     <navigationItem key="navigationItem" id="jNj-l9-07L"/>
                     <connections>
+                        <outlet property="doneButton" destination="deT-v0-0lB" id="znL-8B-qcL"/>
                         <outlet property="titleText" destination="laY-Dh-DOC" id="eSo-L6-C5r"/>
+                        <outlet property="undoButton" destination="EoP-QS-zO8" id="iex-Ku-iBr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYZ-lA-zDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="LDg-lx-w2j" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4062" y="-717"/>
         </scene>

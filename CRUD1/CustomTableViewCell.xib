@@ -64,7 +64,7 @@
                 <outlet property="progressView" destination="o6n-cM-Iv4" id="DNC-WJ-oec"/>
                 <outlet property="titleText" destination="pqI-qD-7Nj" id="O3I-wd-aKb"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
+            <point key="canvasLocation" x="55" y="131"/>
         </tableViewCell>
     </objects>
 </document>

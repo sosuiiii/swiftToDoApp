@@ -27,7 +27,6 @@ class ThirdTabViewController: UIViewController {
         hedderLabel.font = .boldSystemFont(ofSize: 20.0)
         hedderLabel.text = "これまでの実績"
     }
-    
 
     /*
     // MARK: - Navigation

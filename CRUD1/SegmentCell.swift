@@ -32,7 +32,7 @@ class SegmentCell: UITableViewCell {
         contentText.text = contentLabel
         progressText.text = progressLabel
         progressView.setProgress(1.0, animated: true)
-        progressView.tintColor = .blue
+        progressView.tintColor = .green
         if progressView.progress < 0.33 {
             progressView.tintColor = .red
         } else if progressView.progress < 0.66 {
