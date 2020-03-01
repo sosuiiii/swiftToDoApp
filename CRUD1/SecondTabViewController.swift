@@ -14,6 +14,7 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     
+    @IBOutlet weak var hedder: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
     var selectSegment = 0
     @IBOutlet weak var tableView: UITableView!
@@ -27,9 +28,15 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        hedder.backgroundColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
+        
         segment.setTitle("目標一覧", forSegmentAt: 0)
         segment.setTitle("達成済み", forSegmentAt: 1)
         segment.setTitle("未達成", forSegmentAt: 2)
+        segment.tintColor = .clear
+        segment.selectedSegmentTintColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 1)
+        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         
         tableView.register(UINib(nibName: "SegmentCell", bundle: nil), forCellReuseIdentifier: "segmentCell")
         

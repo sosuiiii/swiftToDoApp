@@ -11,7 +11,8 @@ import UIKit
 
 class FirstTabViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-//    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var hedder: UIView!
+    //    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var titleText: UILabel!
 //    var cellVC:cellSettingViewController!
     @IBOutlet weak var tableView: UITableView!
@@ -41,10 +42,13 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
+        hedder.backgroundColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
+        
         titleText.text = "進行中の目標"
         titleText.frame.size.width = view.frame.size.width * 0.8
         titleText.textAlignment = .center
-        
+        titleText.textColor = .white
+        titleText.font = .boldSystemFont(ofSize: 20.0)
 //        tabBarController?.selectedIndex = tabSelectedIndex
         
         setTabBarItem(index: 0, title: "現在の目標" ,image: UIImage(named: "tab01")!, selectedImage: UIImage(named: "tab01ed")!/*, offColor: offColor, onColor: onColor*/)
