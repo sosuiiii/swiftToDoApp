@@ -10,7 +10,9 @@ import UIKit
 
 class ThirdTabViewController: UIViewController {
 
+    @IBOutlet weak var hedder: UIView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var hedderLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,12 @@ class ThirdTabViewController: UIViewController {
         // Do any additional setup after loading the view.
         contentView.layer.cornerRadius = 15
         contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+        contentView.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.05)
         
+        hedder.backgroundColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
+        hedderLabel.textColor = .white
+        hedderLabel.font = .boldSystemFont(ofSize: 20.0)
+        hedderLabel.text = "これまでの実績"
     }
     
 

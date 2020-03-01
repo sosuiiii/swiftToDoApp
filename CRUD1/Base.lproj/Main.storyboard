@@ -330,14 +330,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDB-r8-uWB">
-                                <rect key="frame" x="186" y="20" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROI-Gi-Bqj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1146"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="1086"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-Ww-iDP">
                                         <rect key="frame" x="0.0" y="93" width="414" height="970"/>
@@ -358,7 +352,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="k6T-Ww-iDP" secondAttribute="bottom" constant="83" id="A63-aB-ONZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="k6T-Ww-iDP" secondAttribute="bottom" constant="20" id="A63-aB-ONZ"/>
                                     <constraint firstItem="k6T-Ww-iDP" firstAttribute="top" secondItem="ROI-Gi-Bqj" secondAttribute="top" constant="93" id="GKS-Vm-e6v"/>
                                     <constraint firstAttribute="trailing" secondItem="k6T-Ww-iDP" secondAttribute="trailing" id="Qba-TB-ibd"/>
                                     <constraint firstItem="k6T-Ww-iDP" firstAttribute="leading" secondItem="ROI-Gi-Bqj" secondAttribute="leading" id="wD4-8R-hnT"/>
@@ -366,18 +360,37 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Oq5-eD-PpW"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="ChQ-Eh-WSd"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atg-xk-2HH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDB-r8-uWB">
+                                        <rect key="frame" x="186" y="20" width="42" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="rDB-r8-uWB" firstAttribute="top" secondItem="atg-xk-2HH" secondAttribute="top" constant="20" id="J0f-UR-w9C"/>
+                                    <constraint firstItem="rDB-r8-uWB" firstAttribute="centerX" secondItem="atg-xk-2HH" secondAttribute="centerX" id="NdF-yM-lVz"/>
+                                    <constraint firstItem="rDB-r8-uWB" firstAttribute="centerY" secondItem="atg-xk-2HH" secondAttribute="centerY" id="mo0-WR-qWD"/>
+                                    <constraint firstAttribute="height" constant="60" id="pLE-0q-Ojg"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.78920654705031146" green="0.90303880566126948" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rDB-r8-uWB" firstAttribute="centerX" secondItem="ROI-Gi-Bqj" secondAttribute="centerX" id="8Pm-nX-odY"/>
                             <constraint firstItem="k6T-Ww-iDP" firstAttribute="width" secondItem="jnf-wR-MQH" secondAttribute="width" id="FVY-fB-Mwx"/>
+                            <constraint firstItem="atg-xk-2HH" firstAttribute="top" secondItem="2Cd-E7-Sgb" secondAttribute="top" id="Po3-rb-oUq"/>
                             <constraint firstAttribute="bottom" secondItem="ROI-Gi-Bqj" secondAttribute="bottom" id="Swz-Fs-MMc"/>
-                            <constraint firstItem="rDB-r8-uWB" firstAttribute="centerX" secondItem="jnf-wR-MQH" secondAttribute="centerX" id="cSc-i4-uFp"/>
-                            <constraint firstItem="ROI-Gi-Bqj" firstAttribute="top" secondItem="jnf-wR-MQH" secondAttribute="top" id="jGo-Lb-Ri0"/>
+                            <constraint firstItem="ROI-Gi-Bqj" firstAttribute="top" secondItem="atg-xk-2HH" secondAttribute="bottom" id="U7z-ns-KxC"/>
+                            <constraint firstItem="atg-xk-2HH" firstAttribute="leading" secondItem="k6T-Ww-iDP" secondAttribute="leading" id="bxE-hW-Lsl"/>
+                            <constraint firstAttribute="trailing" secondItem="ROI-Gi-Bqj" secondAttribute="trailing" id="gEf-SR-PEc"/>
                             <constraint firstItem="ROI-Gi-Bqj" firstAttribute="leading" secondItem="2Cd-E7-Sgb" secondAttribute="leading" id="kHd-lY-uMW"/>
                             <constraint firstAttribute="bottom" secondItem="ROI-Gi-Bqj" secondAttribute="bottom" id="kRz-77-118"/>
                             <constraint firstItem="ROI-Gi-Bqj" firstAttribute="bottom" secondItem="2Cd-E7-Sgb" secondAttribute="bottom" constant="83" id="q9i-GZ-XrN"/>
-                            <constraint firstItem="rDB-r8-uWB" firstAttribute="top" secondItem="2Cd-E7-Sgb" secondAttribute="top" constant="20" id="xe4-iG-BkF"/>
+                            <constraint firstItem="atg-xk-2HH" firstAttribute="trailing" secondItem="k6T-Ww-iDP" secondAttribute="trailing" id="uQP-Ye-8bb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Cd-E7-Sgb"/>
                     </view>
@@ -385,11 +398,13 @@
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="contentView" destination="k6T-Ww-iDP" id="Zv5-Ro-KHZ"/>
+                        <outlet property="hedder" destination="atg-xk-2HH" id="NHf-vF-Rop"/>
+                        <outlet property="hedderLabel" destination="rDB-r8-uWB" id="iGx-rh-QDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOe-CT-lxC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="785"/>
+            <point key="canvasLocation" x="3318.840579710145" y="784.82142857142856"/>
         </scene>
         <!--現在の目標-->
         <scene sceneID="6f2-z5-EwZ">
