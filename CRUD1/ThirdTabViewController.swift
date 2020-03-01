@@ -17,7 +17,7 @@ class ThirdTabViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         contentView.layer.cornerRadius = 15
-        contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
         
     }
     

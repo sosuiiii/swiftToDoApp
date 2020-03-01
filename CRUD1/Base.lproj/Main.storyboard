@@ -338,7 +338,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="ChQ-Eh-WSd"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.5754067688499287" green="0.58787992283570301" blue="0.80995315313339233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.78920654705031146" green="0.90303880566126948" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="rDB-r8-uWB" firstAttribute="centerX" secondItem="ROI-Gi-Bqj" secondAttribute="centerX" id="8Pm-nX-odY"/>
                             <constraint firstItem="k6T-Ww-iDP" firstAttribute="width" secondItem="jnf-wR-MQH" secondAttribute="width" id="FVY-fB-Mwx"/>
