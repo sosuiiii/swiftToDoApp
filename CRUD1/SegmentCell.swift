@@ -31,6 +31,7 @@ class SegmentCell: UITableViewCell {
         titleText.text = titleLabel
         contentText.text = contentLabel
         progressText.text = progressLabel
+        progressView.setProgress(1.0, animated: true)
     }
     
 }

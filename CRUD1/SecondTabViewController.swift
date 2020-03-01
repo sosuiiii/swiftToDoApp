@@ -17,20 +17,37 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var segment: UISegmentedControl!
     var selectSegment = 0
     @IBOutlet weak var tableView: UITableView!
-    var firstArray:[String] = []
-    var secondArray:[String] = []
-    var thirdArray:[String] = []
+    var firstArray:[cellTuple] = []
+    var secondArray:[cellTuple] = []
+    var thirdArray:[cellTuple] = []
     var cellCount = 0
+    typealias cellTuple = (title:String , message:String)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        segment.setTitle("目標一覧", forSegmentAt: 0)
+        segment.setTitle("達成済み", forSegmentAt: 1)
+        segment.setTitle("未達成", forSegmentAt: 2)
+        
         tableView.register(UINib(nibName: "SegmentCell", bundle: nil), forCellReuseIdentifier: "segmentCell")
         
-        firstArray += ["aa","bb","cc","firstArray"]
-        secondArray += ["dd","ee","secondArray"]
-        thirdArray += ["gg","thirdArray"]
+        firstArray += [
+            (title:"aa", message:"aaMessage"),
+            (title:"bb", message:"bbMessage"),
+            (title:"cc", message:"ccMessage"),
+            (title:"firstArray", message:"firstArrayMessage"),
+        ]
+        secondArray += [
+            (title:"dd", message:"ddMessage"),
+            (title:"ee", message:"eeMessage"),
+            (title:"secondArray", message:"secondArrayMessage"),
+        ]
+        thirdArray += [
+            (title:"gg", message:"ggMessage"),
+            (title:"thirdArray", message:"thirdArrayMessage"),
+        ]
         
     }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
@@ -65,11 +82,15 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "segmentCell") as! SegmentCell
         if selectSegment == 0 {
-            cell.titleLabel = firstArray[indexPath.row]
+            cell.titleLabel = firstArray[indexPath.row].title
+            cell.contentLabel = firstArray[indexPath.row].message
         } else if selectSegment == 1 {
-            cell.titleLabel = secondArray[indexPath.row]
+            cell.titleLabel = secondArray[indexPath.row].title
+            cell.contentLabel = secondArray[indexPath.row].message
+            
         } else if selectSegment == 2 {
-            cell.titleLabel = thirdArray[indexPath.row]
+            cell.titleLabel = thirdArray[indexPath.row].title
+            cell.contentLabel = thirdArray[indexPath.row].message
         }
         
         return cell
