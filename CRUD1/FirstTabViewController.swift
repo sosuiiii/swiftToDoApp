@@ -28,12 +28,14 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
                      "アプリ開発の勉強をする",
                      "毎日腹筋をする",
                      "メンタルを強くする",
+                     "助けられる強さを持つ"
     ]
     var contentArray = ["毎日500円分貯める",
                         "毎朝軽くでもいいから掃除をする",
                         "30分以上Swiftの勉強をする",
                         "毎朝20回以上やる",
                         "寝る前に自己啓発本を読む",
+                        "自己投資をして稼げる人間になる",
     ]
     
     override func viewDidLoad() {
@@ -129,16 +131,16 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            testArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-        }
-    }
+//    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            testArray.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+//        }
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cellSetting" {
             let cellVC = segue.destination as! cellSettingViewController

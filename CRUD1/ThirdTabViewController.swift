@@ -18,7 +18,7 @@ class ThirdTabViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        contentView.layer.cornerRadius = 15
+        contentView.layer.cornerRadius = 20
         contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
         contentView.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.05)
         
