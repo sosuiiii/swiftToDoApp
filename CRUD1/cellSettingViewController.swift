@@ -11,6 +11,7 @@ import UIKit
 class cellSettingViewController: UIViewController {
 
         
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var hedderLabel: UILabel!
     @IBOutlet weak var hedder: UIView!
     @IBOutlet weak var titleText: UILabel!
@@ -74,6 +75,10 @@ class cellSettingViewController: UIViewController {
             doneButton.backgroundColor = .lightGray
             doneButton.setTitle("済み", for: .normal)
         }
+        
+        backButton.setTitle("×", for: .normal)
+        backButton.titleLabel?.font = .systemFont(ofSize: 25)
+        backButton.setTitleColor(.white, for: .normal)
         
     }
     @IBAction func doneButtonAction(_ sender: Any) {

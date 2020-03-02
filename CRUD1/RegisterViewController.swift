@@ -15,6 +15,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var hedder: UIView!
     @IBOutlet weak var hedderLabel: UILabel!
     
+    var formatter = DateFormatter()
+    var dateArray:[String]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +44,23 @@ class RegisterViewController: UIViewController {
         backButton.layer.cornerRadius = 5
         backButton.setTitle("戻る", for: .normal)
         backButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: viewSize.width * 0.3, bottom: 8, right: viewSize.width * 0.3)
+        
     }
     @IBAction func registerButtonAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
+        let tabVC = self.presentingViewController as! UITabBarController
+        let firstVC = tabVC.selectedViewController as! FirstTabViewController
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+        let dateFormat = formatter.string(from: Date())
+        var date = dateFormat.replacingOccurrences(of: "年", with: "/")
+        date = date.replacingOccurrences(of: "月", with: "/")
+        date = date.replacingOccurrences(of: "日", with: "")
+        dateArray?.append(date)
+        firstVC.dayArray.append(date)
+        dismiss(animated: true, completion: {
+            () -> Void in
+            firstVC.tableView.reloadData()
+        }) 
     }
     @IBAction func backButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)

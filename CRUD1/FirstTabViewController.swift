@@ -28,7 +28,6 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         false,
         false,
         false,
-        false,
     ]
 //    var tabSelectedIndex = 2
     let onColor = UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 1.0)
@@ -39,7 +38,6 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         "アプリ開発の勉強をする",
         "毎日腹筋をする",
         "メンタルを強くする",
-        "助けられる強さを持つ"
     ]
     var contentArray:[String] = [
         "毎日500円分貯める",
@@ -47,10 +45,8 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         "30分以上Swiftの勉強をする",
         "毎朝20回以上やる",
         "寝る前に自己啓発本を読む",
-        "自己投資をして稼げる人間になる",
     ]
     var progressValue:[Int] = [
-        10,
         10,
         10,
         10,
@@ -63,7 +59,6 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         "2020/02/02",
         "2020/02/23",
         "2020/02/28",
-        "2020/03/01",
     ]
     
     override func viewDidLoad() {
@@ -147,7 +142,6 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
             case 2: cellCount = 2
             case 3: cellCount = 3
             case 4: cellCount = 4
-            case 5: cellCount = 5
             default: break
         }
         
@@ -158,7 +152,16 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
-        performSegue(withIdentifier: "register", sender: nil)
+        if contentArray.count == 5 {
+            let alert = UIAlertController(title: "挑戦できる目標は5個までです", message: "", preferredStyle: .alert)
+            present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            performSegue(withIdentifier: "register", sender: nil)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
