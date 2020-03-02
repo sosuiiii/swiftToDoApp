@@ -14,6 +14,7 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var hedder: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
     var selectSegment = 0
@@ -55,6 +56,10 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
             (title:"thirdArray", message:"thirdArrayMessage"),
         ]
         
+        addButton.setTitle("+", for: .normal)
+        addButton.setTitleColor(.white, for: .normal)
+        addButton.titleLabel?.font = .systemFont(ofSize: 25)
+        
     }
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -72,6 +77,10 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         tableView.reloadData()
     }
+    @IBAction func addButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "register", sender: nil)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if selectSegment == 0 {

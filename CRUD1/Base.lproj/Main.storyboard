@@ -261,8 +261,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXC-E8-ZZ9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mru-tC-CeC">
+                                        <rect key="frame" x="364" y="8" width="30" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="addButton:" destination="tva-gq-xRW" eventType="touchUpInside" id="B5s-3k-Rxj"/>
+                                            <action selector="addButtonAction:" destination="PhN-g2-hT2" eventType="touchUpInside" id="P3r-Md-ssf"/>
+                                            <segue destination="0Og-t7-w07" kind="presentation" identifier="register" id="ISO-5Z-txk"/>
+                                        </connections>
+                                    </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hj1-Z9-X81">
-                                        <rect key="frame" x="20" y="15" width="374" height="31"/>
+                                        <rect key="frame" x="62" y="15" width="294" height="31"/>
                                         <segments>
                                             <segment title="first"/>
                                             <segment title="second"/>
@@ -276,8 +286,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Hj1-Z9-X81" firstAttribute="centerY" secondItem="YXC-E8-ZZ9" secondAttribute="centerY" id="37Q-2D-lBW"/>
-                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="centerX" secondItem="YXC-E8-ZZ9" secondAttribute="centerX" id="9n5-F7-53z"/>
-                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="leading" secondItem="YXC-E8-ZZ9" secondAttribute="leading" constant="20" id="SMc-TB-kw8"/>
+                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="centerX" secondItem="YXC-E8-ZZ9" secondAttribute="centerX" constant="2" id="9n5-F7-53z"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mru-tC-CeC" secondAttribute="trailing" constant="20" id="DqC-Eu-kFB"/>
+                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="leading" secondItem="YXC-E8-ZZ9" secondAttribute="leading" constant="62" id="SMc-TB-kw8"/>
+                                    <constraint firstItem="Mru-tC-CeC" firstAttribute="top" secondItem="YXC-E8-ZZ9" secondAttribute="topMargin" id="Y5D-Gy-vSL"/>
                                     <constraint firstItem="Hj1-Z9-X81" firstAttribute="top" secondItem="YXC-E8-ZZ9" secondAttribute="top" constant="15" id="caH-gl-Nil"/>
                                     <constraint firstAttribute="height" constant="60" id="qi4-Y9-FRs"/>
                                 </constraints>
@@ -298,12 +310,14 @@
                     <tabBarItem key="tabBarItem" title="目標リスト" id="sng-2b-Wol"/>
                     <navigationItem key="navigationItem" id="LO1-4l-1V9"/>
                     <connections>
+                        <outlet property="addButton" destination="Mru-tC-CeC" id="YhG-HZ-ugy"/>
                         <outlet property="hedder" destination="YXC-E8-ZZ9" id="OuD-Dp-KRm"/>
                         <outlet property="segment" destination="Hj1-Z9-X81" id="ftm-Pz-a0m"/>
                         <outlet property="tableView" destination="Ag1-hr-EFY" id="cqH-V1-21h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svN-ND-7rC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="tva-gq-xRW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3298.5507246376815" y="-40.178571428571423"/>
         </scene>
@@ -357,6 +371,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnC-Re-HKW">
+                                <rect key="frame" x="57" y="197" width="300" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fZ-4n-cg8">
+                                <rect key="frame" x="57" y="324" width="300" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVD-fc-pgl">
+                                <rect key="frame" x="57" y="475" width="300" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -683,5 +715,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HnX-Om-r9B"/>
+        <segue reference="ISO-5Z-txk"/>
     </inferredMetricsTieBreakers>
 </document>
