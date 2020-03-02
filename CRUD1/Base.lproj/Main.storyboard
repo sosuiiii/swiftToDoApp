@@ -322,6 +322,21 @@
             </objects>
             <point key="canvasLocation" x="4061" y="-40"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="whh-xT-33V">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="0Og-t7-w07" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TqU-2x-Lln">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aDD-2N-2As"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTy-Oo-D6N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4899" y="-309"/>
+        </scene>
         <!--マイページ-->
         <scene sceneID="9QO-M7-fGe">
             <objects>
@@ -444,11 +459,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpN-b5-Uct">
+                                        <rect key="frame" x="322" y="9" width="72" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="addButtonAction:" destination="NSn-7j-hcu" eventType="touchUpInside" id="qM1-jU-mxy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="bpN-b5-Uct" firstAttribute="top" secondItem="653-WE-j14" secondAttribute="top" constant="9" id="KUs-OB-69K"/>
+                                    <constraint firstAttribute="trailing" secondItem="bpN-b5-Uct" secondAttribute="trailing" constant="20" id="WwV-Mb-gEl"/>
                                     <constraint firstItem="V7W-7n-ki9" firstAttribute="centerX" secondItem="653-WE-j14" secondAttribute="centerX" id="Yz2-dU-Cct"/>
                                     <constraint firstAttribute="height" constant="60" id="bi8-Mc-gGz"/>
+                                    <constraint firstItem="bpN-b5-Uct" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V7W-7n-ki9" secondAttribute="trailing" constant="8" symbolic="YES" id="hbr-Wf-HGD"/>
                                     <constraint firstItem="V7W-7n-ki9" firstAttribute="centerY" secondItem="653-WE-j14" secondAttribute="centerY" id="lFP-9Q-OP3"/>
                                     <constraint firstItem="V7W-7n-ki9" firstAttribute="top" secondItem="653-WE-j14" secondAttribute="top" constant="20" id="xpg-C3-QVG"/>
                                 </constraints>
@@ -468,10 +494,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="現在の目標" id="3a3-Hp-PBP"/>
                     <connections>
+                        <outlet property="addButton" destination="bpN-b5-Uct" id="QkK-sC-gbu"/>
                         <outlet property="hedder" destination="653-WE-j14" id="yBq-5L-fQO"/>
                         <outlet property="tableView" destination="vAe-72-uw5" id="Ojt-qZ-yKB"/>
                         <outlet property="titleText" destination="V7W-7n-ki9" id="t2l-4N-E7Q"/>
                         <segue destination="Diw-Um-1yy" kind="presentation" identifier="cellSetting" id="dlj-cf-moQ"/>
+                        <segue destination="0Og-t7-w07" kind="presentation" identifier="register" id="s0J-bv-GGy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PJ-du-vcX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

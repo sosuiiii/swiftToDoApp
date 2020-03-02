@@ -11,6 +11,7 @@ import UIKit
 
 class FirstTabViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var hedder: UIView!
     //    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var titleText: UILabel!
@@ -62,6 +63,10 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         
         hedder.backgroundColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
+
+        addButton.setTitle("＋", for: .normal)
+        addButton.titleLabel?.font = .systemFont(ofSize: 25)
+        addButton.setTitleColor(.white, for: .normal)
         
         titleText.text = "進行中の目標"
         titleText.frame.size.width = view.frame.size.width * 0.8
@@ -163,6 +168,11 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 //            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
 //        }
 //    }
+    
+    @IBAction func addButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "register", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cellSetting" {
             let cellVC = segue.destination as! cellSettingViewController
