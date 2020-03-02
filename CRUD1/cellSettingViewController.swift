@@ -14,8 +14,15 @@ class cellSettingViewController: UIViewController {
     var testText = ""
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
-    var doneCheck = false
-    
+    var doneCheck = [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+    ]
+    var cellCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +50,28 @@ class cellSettingViewController: UIViewController {
         undoButton.setTitleColor(.init(red: 153/255, green: 0, blue: 0, alpha: 0.9), for: .normal)
         undoButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: viewSize.width * 0.3, bottom: 8, right: viewSize.width * 0.3)
         
+        if doneCheck[cellCount] {
+//            doneButton.isEnabled = false
+            doneButton.backgroundColor = .lightGray
+            doneButton.setTitle("済み", for: .normal)
+        }
+        
     }
     @IBAction func doneButtonAction(_ sender: Any) {
         let alert = UIAlertController(title: "目標を達成しましたか？", message: "", preferredStyle: .alert)
         let done = UIAlertAction(title: "はい", style: .default, handler: {
             (action) -> Void in
-            self.doneCheck = true
+            self.doneCheck[self.cellCount] = true
+            self.doneButton.isEnabled = false
+            
+            let tabVC = self.presentingViewController as! UITabBarController
+            let firstVC = tabVC.selectedViewController as! FirstTabViewController
+                firstVC.progressValue[self.cellCount] = firstVC.progressValue[self.cellCount] - 1
+            firstVC.doneCheck[self.cellCount] = true
+            if !self.doneButton.isEnabled {
+                self.doneButton.backgroundColor = .lightGray
+                self.doneButton.setTitle("済み", for: .normal)
+            }
             let alert = UIAlertController(title: "お疲れ様でした！！", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
@@ -57,7 +80,7 @@ class cellSettingViewController: UIViewController {
         })
         let undo = UIAlertAction(title: "いいえ", style: .destructive, handler: {
             (action) -> Void in
-            self.doneCheck = false
+            self.doneCheck[self.cellCount] = false
             
             let alert = UIAlertController(title: "ど根性！", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
@@ -73,7 +96,7 @@ class cellSettingViewController: UIViewController {
         let alert = UIAlertController(title: "目標を諦めますか？", message: "", preferredStyle: .alert)
         let done = UIAlertAction(title: "はい", style: .default, handler: {
             (action) -> Void in
-            self.doneCheck = true
+            self.doneCheck[self.cellCount] = true
             let alert = UIAlertController(title: "時には諦めることも必要です", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
@@ -82,7 +105,7 @@ class cellSettingViewController: UIViewController {
         })
         let undo = UIAlertAction(title: "いいえ", style: .destructive, handler: {
             (action) -> Void in
-            self.doneCheck = false
+            self.doneCheck[self.cellCount] = false
             let alert = UIAlertController(title: "ど根性！", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
@@ -93,6 +116,17 @@ class cellSettingViewController: UIViewController {
         alert.addAction(undo)
         present(alert, animated: true, completion: nil)
     }
+    @IBAction func closeButtonAction(_ sender: Any) {
+        let tabVC = self.presentingViewController as! UITabBarController
+        let firstVC = tabVC.selectedViewController as! FirstTabViewController
+//        firstVC.progressValue[self.cellCount] = firstVC.progressValue[self.cellCount] - 1
+        
+        dismiss(animated: true, completion: {
+            () -> Void in
+            firstVC.tableView.reloadData()
+        })
+    }
+    
     /*
     // MARK: - Navigation
 

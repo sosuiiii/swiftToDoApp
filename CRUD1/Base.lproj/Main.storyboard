@@ -471,7 +471,7 @@
                         <outlet property="hedder" destination="653-WE-j14" id="yBq-5L-fQO"/>
                         <outlet property="tableView" destination="vAe-72-uw5" id="Ojt-qZ-yKB"/>
                         <outlet property="titleText" destination="V7W-7n-ki9" id="t2l-4N-E7Q"/>
-                        <segue destination="Diw-Um-1yy" kind="show" identifier="cellSetting" id="dlj-cf-moQ"/>
+                        <segue destination="Diw-Um-1yy" kind="presentation" identifier="cellSetting" id="dlj-cf-moQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PJ-du-vcX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -481,19 +481,19 @@
         <!--Cell Setting View Controller-->
         <scene sceneID="hcH-8S-sYk">
             <objects>
-                <viewController id="Diw-Um-1yy" customClass="cellSettingViewController" customModule="CRUD1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Diw-Um-1yy" customClass="cellSettingViewController" customModule="CRUD1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l78-7E-MF9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laY-Dh-DOC">
-                                <rect key="frame" x="186" y="85" width="42" height="21"/>
+                                <rect key="frame" x="186" y="129" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deT-v0-0lB">
-                                <rect key="frame" x="184" y="668" width="46" height="30"/>
+                                <rect key="frame" x="184" y="722" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="doneButton:" destination="LDg-lx-w2j" eventType="touchUpInside" id="2P0-JG-Wzp"/>
@@ -501,11 +501,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoP-QS-zO8">
-                                <rect key="frame" x="184" y="728" width="46" height="30"/>
+                                <rect key="frame" x="184" y="782" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="undoButton:" destination="LDg-lx-w2j" eventType="touchUpInside" id="dFt-yf-coz"/>
                                     <action selector="undoButtonAction:" destination="Diw-Um-1yy" eventType="touchUpInside" id="7lL-og-pR5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCx-An-49l">
+                                <rect key="frame" x="20" y="44" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="Diw-Um-1yy" eventType="touchUpInside" id="jY4-L3-sPa"/>
                                 </connections>
                             </button>
                         </subviews>

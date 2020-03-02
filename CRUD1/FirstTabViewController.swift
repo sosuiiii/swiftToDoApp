@@ -21,6 +21,14 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     var cellCount = 0
     var value = 2
     let sum = 10
+    var doneCheck = [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+    ]
 //    var tabSelectedIndex = 2
     let onColor = UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 1.0)
     let offColor = UIColor.gray
@@ -37,6 +45,14 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
                         "毎朝20回以上やる",
                         "寝る前に自己啓発本を読む",
                         "自己投資をして稼げる人間になる",
+    ]
+    var progressValue = [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
     ]
     
     override func viewDidLoad() {
@@ -100,8 +116,8 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
         cell.testText = testArray[indexPath.row]
         cell.content = contentArray[indexPath.row]
-        cell.progressText = "\(value + indexPath.row)/\(sum)"
-        cell.progressView.setProgress(Float(indexPath.row) / 10.0 + 0.2, animated: true)
+        cell.progressText = "\(progressValue[indexPath.row])/\(sum)"
+        cell.progressView.setProgress(Float(progressValue[indexPath.row]) / Float(sum), animated: true)
         cell.accessoryType = .disclosureIndicator
         return cell
         
@@ -122,7 +138,8 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
             case 2: cellCount = 2
             case 3: cellCount = 3
             case 4: cellCount = 4
-            default: cellCount = 0
+            case 5: cellCount = 5
+            default: break
         }
         
         performSegue(withIdentifier: "cellSetting", sender: nil)
@@ -149,12 +166,20 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "cellSetting" {
             let cellVC = segue.destination as! cellSettingViewController
+            cellVC.doneCheck[cellCount] = self.doneCheck[cellCount]
             switch cellCount {
             case 0: cellVC.testText = testArray[0]
+                cellVC.cellCount = cellCount
             case 1: cellVC.testText = testArray[1]
+                cellVC.cellCount = cellCount
             case 2: cellVC.testText = testArray[2]
+                cellVC.cellCount = cellCount
             case 3: cellVC.testText = testArray[3]
+                cellVC.cellCount = cellCount
             case 4: cellVC.testText = testArray[4]
+                cellVC.cellCount = cellCount
+            case 5: cellVC.testText = testArray[5]
+                cellVC.cellCount = cellCount
             default: print("")
             }
         }
