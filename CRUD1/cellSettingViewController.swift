@@ -45,32 +45,23 @@ class cellSettingViewController: UIViewController {
         
     }
     @IBAction func doneButtonAction(_ sender: Any) {
-        alert("目標を達成しましたか？", done: "はい", "お疲れ様でした！！！", undo: "いいえ", "もう一息です！")
-        if doneCheck {
-            
-        }
-    }
-    @IBAction func undoButtonAction(_ sender: Any) {
-        alert("目標を諦めますか？", done: "はい", "時には諦めることも必要です", undo: "いいえ", "ど根性！！")
-    }
-    
-    func alert(_ title:String, done:String, _ doneMessage: String, undo:String, _ undoMessage:String) {
-        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
-        let done = UIAlertAction(title: done, style: .default, handler: {
+        let alert = UIAlertController(title: "目標を達成しましたか？", message: "", preferredStyle: .alert)
+        let done = UIAlertAction(title: "はい", style: .default, handler: {
             (action) -> Void in
             self.doneCheck = true
-            let alert = UIAlertController(title: doneMessage, message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "お疲れ様でした！！", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                 self.dismiss(animated: true, completion: nil)
             }
         })
-        let undo = UIAlertAction(title: undo, style: .destructive, handler: {
+        let undo = UIAlertAction(title: "いいえ", style: .destructive, handler: {
             (action) -> Void in
             self.doneCheck = false
-            let alert = UIAlertController(title: undoMessage, message: "", preferredStyle: .alert)
+            
+            let alert = UIAlertController(title: "ど根性！", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                 self.dismiss(animated: true, completion: nil)
             }
         })
@@ -78,8 +69,30 @@ class cellSettingViewController: UIViewController {
         alert.addAction(undo)
         present(alert, animated: true, completion: nil)
     }
-    
-
+    @IBAction func undoButtonAction(_ sender: Any) {
+        let alert = UIAlertController(title: "目標を諦めますか？", message: "", preferredStyle: .alert)
+        let done = UIAlertAction(title: "はい", style: .default, handler: {
+            (action) -> Void in
+            self.doneCheck = true
+            let alert = UIAlertController(title: "時には諦めることも必要です", message: "", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
+        let undo = UIAlertAction(title: "いいえ", style: .destructive, handler: {
+            (action) -> Void in
+            self.doneCheck = false
+            let alert = UIAlertController(title: "ど根性！", message: "", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        })
+        alert.addAction(done)
+        alert.addAction(undo)
+        present(alert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
