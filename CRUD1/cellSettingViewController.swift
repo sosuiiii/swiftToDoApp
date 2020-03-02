@@ -10,10 +10,20 @@ import UIKit
 
 class cellSettingViewController: UIViewController {
 
+        
+    @IBOutlet weak var hedderLabel: UILabel!
+    @IBOutlet weak var hedder: UIView!
     @IBOutlet weak var titleText: UILabel!
     var testText = ""
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var contentText: UILabel!
+    var content = ""
+    @IBOutlet weak var dayCount: UILabel!
+    var day = ""
+    
+    
+    //達成を押したかどうかを判断する
     var doneCheck = [
         false,
         false,
@@ -29,6 +39,12 @@ class cellSettingViewController: UIViewController {
         
         let viewSize = view.frame.size
         // Do any additional setup after loading the view.
+        hedder.backgroundColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
+        hedderLabel.text = "目標"
+        hedderLabel.frame.size.width = view.frame.size.width * 0.8
+        hedderLabel.textColor = .white
+        hedderLabel.font = .boldSystemFont(ofSize: 20.0)
+        
         titleText.text = testText
         titleText.frame.size.width = viewSize.width * 0.8
         titleText.textAlignment = .center
@@ -49,6 +65,9 @@ class cellSettingViewController: UIViewController {
         undoButton.setTitle("断念", for: .normal)
         undoButton.setTitleColor(.init(red: 153/255, green: 0, blue: 0, alpha: 0.9), for: .normal)
         undoButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: viewSize.width * 0.3, bottom: 8, right: viewSize.width * 0.3)
+        
+        contentText.text = content
+        dayCount.text = "目標実行日 \(day)"
         
         if doneCheck[cellCount] {
 //            doneButton.isEnabled = false

@@ -18,11 +18,11 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 //    var cellVC:cellSettingViewController!
     @IBOutlet weak var tableView: UITableView!
     
-    
     var cellCount = 0
     var value = 2
     let sum = 10
-    var doneCheck = [
+    typealias checkType = [Bool]
+    var doneCheck:checkType = [
         false,
         false,
         false,
@@ -33,27 +33,37 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
 //    var tabSelectedIndex = 2
     let onColor = UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 1.0)
     let offColor = UIColor.gray
-    var testArray = ["お金を貯める",
-                     "掃除をする",
-                     "アプリ開発の勉強をする",
-                     "毎日腹筋をする",
-                     "メンタルを強くする",
-                     "助けられる強さを持つ"
+    var testArray:[String] = [
+        "お金を貯める",
+        "掃除をする",
+        "アプリ開発の勉強をする",
+        "毎日腹筋をする",
+        "メンタルを強くする",
+        "助けられる強さを持つ"
     ]
-    var contentArray = ["毎日500円分貯める",
-                        "毎朝軽くでもいいから掃除をする",
-                        "30分以上Swiftの勉強をする",
-                        "毎朝20回以上やる",
-                        "寝る前に自己啓発本を読む",
-                        "自己投資をして稼げる人間になる",
+    var contentArray:[String] = [
+        "毎日500円分貯める",
+        "毎朝軽くでもいいから掃除をする",
+        "30分以上Swiftの勉強をする",
+        "毎朝20回以上やる",
+        "寝る前に自己啓発本を読む",
+        "自己投資をして稼げる人間になる",
     ]
-    var progressValue = [
+    var progressValue:[Int] = [
         10,
         10,
         10,
         10,
         10,
         10,
+    ]
+    var dayArray:[String] = [
+        "2020/01/12",
+        "2020/01/15",
+        "2020/02/02",
+        "2020/02/23",
+        "2020/02/28",
+        "2020/03/01",
     ]
     
     override func viewDidLoad() {
@@ -125,12 +135,6 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.progressView.setProgress(Float(progressValue[indexPath.row]) / Float(sum), animated: true)
         cell.accessoryType = .disclosureIndicator
         return cell
-        
-//        return UITableViewCell()
-        // セルを取得する
-//        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel!.text = "TODO[indexPath.row]"
-//        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -152,22 +156,6 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            testArray.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-//        }
-//    }
     
     @IBAction func addButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "register", sender: nil)
@@ -177,22 +165,12 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "cellSetting" {
             let cellVC = segue.destination as! cellSettingViewController
             cellVC.doneCheck[cellCount] = self.doneCheck[cellCount]
-            switch cellCount {
-            case 0: cellVC.testText = testArray[0]
-                cellVC.cellCount = cellCount
-            case 1: cellVC.testText = testArray[1]
-                cellVC.cellCount = cellCount
-            case 2: cellVC.testText = testArray[2]
-                cellVC.cellCount = cellCount
-            case 3: cellVC.testText = testArray[3]
-                cellVC.cellCount = cellCount
-            case 4: cellVC.testText = testArray[4]
-                cellVC.cellCount = cellCount
-            case 5: cellVC.testText = testArray[5]
-                cellVC.cellCount = cellCount
-            default: print("")
-            }
+            cellVC.testText = testArray[cellCount]
+            cellVC.content = contentArray[cellCount]
+            cellVC.day = dayArray[cellCount]
+            cellVC.cellCount = cellCount
         }
+        
     }
 
     /*
