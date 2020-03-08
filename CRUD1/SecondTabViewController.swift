@@ -102,13 +102,16 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         if selectSegment == 0 {
             cell.titleLabel = firstArray[indexPath.row].title
             cell.contentLabel = firstArray[indexPath.row].message
+            cell.accessoryType = .checkmark
         } else if selectSegment == 1 {
             cell.titleLabel = secondArray[indexPath.row].title
             cell.contentLabel = secondArray[indexPath.row].message
+            cell.accessoryType = .none
             
         } else if selectSegment == 2 {
             cell.titleLabel = thirdArray[indexPath.row].title
             cell.contentLabel = thirdArray[indexPath.row].message
+            cell.accessoryType = .none
         }
         
         return cell

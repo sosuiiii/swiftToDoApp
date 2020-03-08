@@ -129,6 +129,7 @@ class cellSettingViewController: UIViewController {
             firstVC.testArray.remove(at: self.cellCount)
             firstVC.contentArray.remove(at: self.cellCount)
             firstVC.dayArray.remove(at: self.cellCount)
+            firstVC.progressValue.remove(at: self.cellCount)
             
             let alert = UIAlertController(title: "時には諦めることも必要です", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
