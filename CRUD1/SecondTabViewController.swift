@@ -10,10 +10,7 @@ import UIKit
 
 class SecondTabViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
-    
-    
+    @IBOutlet weak var hedderLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var hedder: UIView!
     @IBOutlet weak var segment: UISegmentedControl!
@@ -31,11 +28,17 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         hedder.backgroundColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
         
-        segment.setTitle("目標一覧", forSegmentAt: 0)
+        hedderLabel.text = "目標管理"
+        hedderLabel.textColor = .white
+        hedderLabel.font = .boldSystemFont(ofSize: 20)
+//        hedderLabel.font = .systemFont(ofSize: 25)
+        
+        segment.setTitle("待機中", forSegmentAt: 0)
         segment.setTitle("達成済み", forSegmentAt: 1)
         segment.setTitle("未達成", forSegmentAt: 2)
-        segment.selectedSegmentTintColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
-        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segment.backgroundColor = .init(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)
+        segment.selectedSegmentTintColor = .white
+        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 23/255, green: 58/255, blue: 130/255, alpha: 0.8)], for: .selected)
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         
         tableView.register(UINib(nibName: "SegmentCell", bundle: nil), forCellReuseIdentifier: "segmentCell")
@@ -56,7 +59,7 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
             (title:"thirdArray", message:"thirdArrayMessage"),
         ]
         
-        addButton.setTitle("+", for: .normal)
+        addButton.setTitle("＋", for: .normal)
         addButton.setTitleColor(.white, for: .normal)
         addButton.titleLabel?.font = .systemFont(ofSize: 25)
         
@@ -112,6 +115,16 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let alert = UIAlertController(title: "この目標にチャレンジしますか？", message: "", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "はい", style: .default, handler: {
+            (alert) -> Void in
+        })
+        let no = UIAlertAction(title: "いいえ", style: .destructive, handler: {
+            (alert) -> Void in
+        })
+        alert.addAction(yes)
+        alert.addAction(no)
+        present(alert, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150

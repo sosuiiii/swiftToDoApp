@@ -18,7 +18,7 @@ class SegmentCell: UITableViewCell {
     var titleLabel = "test"
     var contentLabel = "test"
     var progress = "test"
-    var progressLabel = "test"
+    var progressLabel = "待機中"
     
     override func awakeFromNib() {
         super.awakeFromNib()

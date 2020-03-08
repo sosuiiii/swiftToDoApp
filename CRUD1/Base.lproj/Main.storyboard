@@ -241,7 +241,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ag1-hr-EFY">
-                                <rect key="frame" x="20" y="61" width="374" height="698"/>
+                                <rect key="frame" x="20" y="107" width="374" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fBu-hK-Gjz">
@@ -262,7 +262,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mru-tC-CeC">
-                                        <rect key="frame" x="364" y="8" width="30" height="42"/>
+                                        <rect key="frame" x="364" y="9" width="30" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="+"/>
                                         <connections>
@@ -271,39 +271,46 @@
                                             <segue destination="0Og-t7-w07" kind="presentation" identifier="register" id="ISO-5Z-txk"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hj1-Z9-X81">
-                                        <rect key="frame" x="62" y="15" width="294" height="31"/>
-                                        <segments>
-                                            <segment title="first"/>
-                                            <segment title="second"/>
-                                            <segment title="third"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="segmentAction:" destination="PhN-g2-hT2" eventType="valueChanged" id="DdQ-ar-b8c"/>
-                                        </connections>
-                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P4-Sd-xfi">
+                                        <rect key="frame" x="186" y="19.5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="centerY" secondItem="YXC-E8-ZZ9" secondAttribute="centerY" id="37Q-2D-lBW"/>
-                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="centerX" secondItem="YXC-E8-ZZ9" secondAttribute="centerX" constant="2" id="9n5-F7-53z"/>
+                                    <constraint firstItem="4P4-Sd-xfi" firstAttribute="centerY" secondItem="YXC-E8-ZZ9" secondAttribute="centerY" id="8gT-6h-SQv"/>
                                     <constraint firstAttribute="trailing" secondItem="Mru-tC-CeC" secondAttribute="trailing" constant="20" id="DqC-Eu-kFB"/>
-                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="leading" secondItem="YXC-E8-ZZ9" secondAttribute="leading" constant="62" id="SMc-TB-kw8"/>
-                                    <constraint firstItem="Mru-tC-CeC" firstAttribute="top" secondItem="YXC-E8-ZZ9" secondAttribute="topMargin" id="Y5D-Gy-vSL"/>
-                                    <constraint firstItem="Hj1-Z9-X81" firstAttribute="top" secondItem="YXC-E8-ZZ9" secondAttribute="top" constant="15" id="caH-gl-Nil"/>
+                                    <constraint firstItem="Mru-tC-CeC" firstAttribute="top" secondItem="YXC-E8-ZZ9" secondAttribute="top" constant="9" id="T7A-PQ-5X7"/>
                                     <constraint firstAttribute="height" constant="60" id="qi4-Y9-FRs"/>
+                                    <constraint firstItem="4P4-Sd-xfi" firstAttribute="centerX" secondItem="YXC-E8-ZZ9" secondAttribute="centerX" id="uXD-Hd-7gU"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hj1-Z9-X81">
+                                <rect key="frame" x="60" y="68" width="294" height="32"/>
+                                <segments>
+                                    <segment title="first"/>
+                                    <segment title="second"/>
+                                    <segment title="third"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="PhN-g2-hT2" eventType="valueChanged" id="DdQ-ar-b8c"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ag1-hr-EFY" firstAttribute="leading" secondItem="o7g-wh-oSV" secondAttribute="leadingMargin" id="Ei4-bU-MER"/>
                             <constraint firstItem="Ag1-hr-EFY" firstAttribute="bottom" secondItem="aud-h5-Ia0" secondAttribute="bottom" id="F9y-l9-qf4"/>
+                            <constraint firstItem="Hj1-Z9-X81" firstAttribute="leading" secondItem="o7g-wh-oSV" secondAttribute="leading" constant="60" id="Hul-wP-dp4"/>
                             <constraint firstItem="YXC-E8-ZZ9" firstAttribute="leading" secondItem="o7g-wh-oSV" secondAttribute="leading" id="MPv-iZ-yut"/>
+                            <constraint firstItem="Hj1-Z9-X81" firstAttribute="centerX" secondItem="o7g-wh-oSV" secondAttribute="centerX" id="Paj-2O-GUr"/>
                             <constraint firstItem="YXC-E8-ZZ9" firstAttribute="centerX" secondItem="Ag1-hr-EFY" secondAttribute="centerX" id="cEp-fs-wyo"/>
                             <constraint firstItem="Ag1-hr-EFY" firstAttribute="trailing" secondItem="o7g-wh-oSV" secondAttribute="trailingMargin" id="cFO-7g-5i1"/>
+                            <constraint firstItem="Ag1-hr-EFY" firstAttribute="top" secondItem="Hj1-Z9-X81" secondAttribute="bottom" constant="8" id="jFH-nV-4Zj"/>
                             <constraint firstItem="YXC-E8-ZZ9" firstAttribute="top" secondItem="aud-h5-Ia0" secondAttribute="top" id="jkr-4c-jtF"/>
-                            <constraint firstItem="Ag1-hr-EFY" firstAttribute="top" secondItem="YXC-E8-ZZ9" secondAttribute="bottom" constant="1" id="rrG-E3-hDb"/>
+                            <constraint firstItem="Hj1-Z9-X81" firstAttribute="top" secondItem="YXC-E8-ZZ9" secondAttribute="bottom" constant="8" id="pVi-wZ-zRo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aud-h5-Ia0"/>
                     </view>
@@ -312,6 +319,7 @@
                     <connections>
                         <outlet property="addButton" destination="Mru-tC-CeC" id="YhG-HZ-ugy"/>
                         <outlet property="hedder" destination="YXC-E8-ZZ9" id="OuD-Dp-KRm"/>
+                        <outlet property="hedderLabel" destination="4P4-Sd-xfi" id="l3C-ae-Bps"/>
                         <outlet property="segment" destination="Hj1-Z9-X81" id="ftm-Pz-a0m"/>
                         <outlet property="tableView" destination="Ag1-hr-EFY" id="cqH-V1-21h"/>
                     </connections>
