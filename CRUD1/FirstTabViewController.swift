@@ -21,8 +21,15 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
     var cellCount = 0
     var value = 2
     let sum = 10
-    typealias checkType = [Bool]
-    var doneCheck:checkType = [
+    var doneCheck:[Bool] = [
+        false,
+        false,
+        false,
+        false,
+        false,
+    ]
+    //断念を押したかどうか
+    var undoCheck:[Bool] = [
         false,
         false,
         false,
@@ -129,6 +136,9 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.progressText = "\(progressValue[indexPath.row])/\(sum)"
         cell.progressView.setProgress(Float(progressValue[indexPath.row]) / Float(sum), animated: true)
         cell.accessoryType = .disclosureIndicator
+        
+        
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

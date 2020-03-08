@@ -31,8 +31,8 @@ class cellSettingViewController: UIViewController {
         false,
         false,
         false,
-        false,
     ]
+
     var cellCount = 0
     
     override func viewDidLoad() {
@@ -121,6 +121,15 @@ class cellSettingViewController: UIViewController {
         let done = UIAlertAction(title: "はい", style: .default, handler: {
             (action) -> Void in
             self.doneCheck[self.cellCount] = true
+            
+            //断念を押した場合、遷移元に戻ったらセルを削除する
+            let tabVC = self.presentingViewController as! UITabBarController
+            let firstVC = tabVC.selectedViewController as! FirstTabViewController
+            firstVC.undoCheck[self.cellCount] = true
+            firstVC.testArray.remove(at: self.cellCount)
+            firstVC.contentArray.remove(at: self.cellCount)
+            firstVC.dayArray.remove(at: self.cellCount)
+            
             let alert = UIAlertController(title: "時には諦めることも必要です", message: "", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
