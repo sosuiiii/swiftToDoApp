@@ -21,6 +21,7 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
     var thirdArray:[cellTuple] = []
     var cellCount = 0
     typealias cellTuple = (title:String , message:String)
+    var formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,25 +103,56 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         if selectSegment == 0 {
             cell.titleLabel = firstArray[indexPath.row].title
             cell.contentLabel = firstArray[indexPath.row].message
-            cell.accessoryType = .checkmark
+            cell.accessoryType = .disclosureIndicator
+            tableView.allowsSelection = true
         } else if selectSegment == 1 {
             cell.titleLabel = secondArray[indexPath.row].title
             cell.contentLabel = secondArray[indexPath.row].message
             cell.accessoryType = .none
+            tableView.allowsSelection = false
             
         } else if selectSegment == 2 {
             cell.titleLabel = thirdArray[indexPath.row].title
             cell.contentLabel = thirdArray[indexPath.row].message
             cell.accessoryType = .none
+            tableView.allowsSelection = false
         }
         
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
         let alert = UIAlertController(title: "この目標にチャレンジしますか？", message: "", preferredStyle: .alert)
         let yes = UIAlertAction(title: "はい", style: .default, handler: {
             (alert) -> Void in
+            
+            let firstVC = self.tabBarController!.viewControllers![0] as! FirstTabViewController
+            if firstVC.contentArray.count < 5 {
+                firstVC.testArray.append(self.firstArray[indexPath.row].title)
+                firstVC.contentArray.append(self.firstArray[indexPath.row].message)
+                firstVC.progressValue.append(10)
+                
+                self.formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+                let dateFormat = self.formatter.string(from: Date())
+                var date = dateFormat.replacingOccurrences(of: "年", with: "/")
+                date = date.replacingOccurrences(of: "月", with: "/")
+                date = date.replacingOccurrences(of: "日", with: "")
+                
+                firstVC.dayArray.append(date)
+                firstVC.tableView.reloadData()
+                self.firstArray.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            } else {
+                let alert = UIAlertController(title: "挑戦できる目標は5個までです", message: "", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+            
         })
         let no = UIAlertAction(title: "いいえ", style: .destructive, handler: {
             (alert) -> Void in

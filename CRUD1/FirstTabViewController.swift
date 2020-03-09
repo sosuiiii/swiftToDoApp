@@ -137,8 +137,6 @@ class FirstTabViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.progressView.setProgress(Float(progressValue[indexPath.row]) / Float(sum), animated: true)
         cell.accessoryType = .disclosureIndicator
         
-        
-        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
