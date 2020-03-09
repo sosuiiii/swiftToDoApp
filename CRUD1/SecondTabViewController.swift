@@ -161,6 +161,22 @@ class SecondTabViewController: UIViewController, UITableViewDelegate, UITableVie
         alert.addAction(no)
         present(alert, animated: true, completion: nil)
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if selectSegment == 0 {
+            return true
+        } else if selectSegment == 1 {
+            return false
+        } else {
+            return false
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete, selectSegment == 0 {
+            self.firstArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
