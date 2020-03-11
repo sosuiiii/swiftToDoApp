@@ -379,37 +379,48 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnC-Re-HKW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnC-Re-HKW">
                                 <rect key="frame" x="57" y="197" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fZ-4n-cg8">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fZ-4n-cg8">
                                 <rect key="frame" x="57" y="324" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mVD-fc-pgl">
-                                <rect key="frame" x="57" y="475" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lke-9h-rec">
+                                <rect key="frame" x="57" y="392" width="300" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="MAz-1Z-uSF"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="TqU-2x-Lln" id="238-rt-76v"/>
+                                    <outlet property="delegate" destination="TqU-2x-Lln" id="FeY-lk-XJ7"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ux7-4u-USJ" firstAttribute="centerY" secondItem="34Q-Ar-t4e" secondAttribute="centerY" id="2yn-ad-Bqp"/>
+                            <constraint firstItem="7fZ-4n-cg8" firstAttribute="top" secondItem="jnC-Re-HKW" secondAttribute="bottom" constant="93" id="4Vl-9g-hTF"/>
+                            <constraint firstItem="7fZ-4n-cg8" firstAttribute="leading" secondItem="lke-9h-rec" secondAttribute="leading" id="4bd-Qc-2Kn"/>
                             <constraint firstItem="34Q-Ar-t4e" firstAttribute="leading" secondItem="aDD-2N-2As" secondAttribute="leading" id="7wz-Ym-WzX"/>
                             <constraint firstItem="udW-eT-28I" firstAttribute="centerX" secondItem="TqU-2x-Lln" secondAttribute="centerX" id="8sg-B6-NXE"/>
+                            <constraint firstItem="jnC-Re-HKW" firstAttribute="trailing" secondItem="7fZ-4n-cg8" secondAttribute="trailing" id="FLc-IV-M3D"/>
+                            <constraint firstItem="jnC-Re-HKW" firstAttribute="leading" secondItem="aDD-2N-2As" secondAttribute="leading" constant="57" id="JxP-1b-eJV"/>
                             <constraint firstItem="34Q-Ar-t4e" firstAttribute="centerX" secondItem="udW-eT-28I" secondAttribute="centerX" id="KEU-AJ-9AR"/>
                             <constraint firstItem="ux7-4u-USJ" firstAttribute="top" secondItem="aDD-2N-2As" secondAttribute="top" constant="20" id="KHu-US-cV9"/>
                             <constraint firstItem="aDD-2N-2As" firstAttribute="bottom" secondItem="vb6-8Y-9ri" secondAttribute="bottom" constant="50" id="N8H-Ey-oEm"/>
+                            <constraint firstItem="7fZ-4n-cg8" firstAttribute="trailing" secondItem="lke-9h-rec" secondAttribute="trailing" id="Ynv-Tg-PdB"/>
                             <constraint firstItem="ux7-4u-USJ" firstAttribute="centerX" secondItem="34Q-Ar-t4e" secondAttribute="centerX" id="ZZK-Mr-eRS"/>
+                            <constraint firstItem="lke-9h-rec" firstAttribute="top" secondItem="7fZ-4n-cg8" secondAttribute="bottom" constant="34" id="gIW-wR-x4a"/>
                             <constraint firstItem="vb6-8Y-9ri" firstAttribute="centerX" secondItem="TqU-2x-Lln" secondAttribute="centerX" id="jIo-je-1Mh"/>
                             <constraint firstItem="34Q-Ar-t4e" firstAttribute="top" secondItem="aDD-2N-2As" secondAttribute="top" id="jv2-Y4-Nfi"/>
+                            <constraint firstItem="jnC-Re-HKW" firstAttribute="top" secondItem="34Q-Ar-t4e" secondAttribute="bottom" constant="93" id="lSt-NG-GyB"/>
                             <constraint firstItem="vb6-8Y-9ri" firstAttribute="top" secondItem="udW-eT-28I" secondAttribute="bottom" constant="30" id="pax-Le-huo"/>
+                            <constraint firstItem="jnC-Re-HKW" firstAttribute="leading" secondItem="7fZ-4n-cg8" secondAttribute="leading" id="x8t-OK-yTT"/>
+                            <constraint firstItem="ux7-4u-USJ" firstAttribute="centerX" secondItem="jnC-Re-HKW" secondAttribute="centerX" id="yq8-Gx-lMX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aDD-2N-2As"/>
                     </view>
@@ -417,7 +428,10 @@
                         <outlet property="backButton" destination="vb6-8Y-9ri" id="3he-c8-V05"/>
                         <outlet property="hedder" destination="34Q-Ar-t4e" id="ksM-Dd-6vl"/>
                         <outlet property="hedderLabel" destination="ux7-4u-USJ" id="7nj-06-kOm"/>
+                        <outlet property="pickerView" destination="lke-9h-rec" id="HYQ-DR-CXN"/>
                         <outlet property="registerButton" destination="udW-eT-28I" id="3F9-ND-l8T"/>
+                        <outlet property="textField1" destination="jnC-Re-HKW" id="tmR-1u-ZMe"/>
+                        <outlet property="textField2" destination="7fZ-4n-cg8" id="Ofr-7x-urR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTy-Oo-D6N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
